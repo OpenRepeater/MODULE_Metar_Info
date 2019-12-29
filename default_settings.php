@@ -11,6 +11,10 @@
 */
 
 $default_settings = [
-    'timeout_min' => '10',
+    'timeout_min' => '2',
+	'server' => 'https://aviationweather.gov',
+    'link' => '/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=',
+    'airports_list' => 'ESSB,EDDP,SKSM,EDDS,EDDM,EDDF,KJAC,KTOL',
+    'airport_default' => 'ESSB',
 ];
 ?>

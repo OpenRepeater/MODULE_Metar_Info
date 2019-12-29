@@ -12,17 +12,21 @@ $module_config_array['Module'.$cur_mod['svxlinkName']] = [
 	'NAME' => $cur_mod['svxlinkName'],
 	'ID' => $cur_mod['svxlinkID'],
 	'TIMEOUT' => intval($options['timeout_min']) * 60,				
-
 	'TYPE' => 'XML',
-	'#SERVER' => 'tgftp.nws.noaa.gov',
-	'SERVER' => 'https://aviationweather.gov',
-	'#LINK' => 'data/observations/metar/stations',
-	'LINK' => '/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=',
-	'#STARTDEFAULT' => 'EDDP',
+	'SERVER' => $options['server'],
+	'LINK' => $options['link'],
 	'#LONGMESSAGES' => '1',
 	'#REMARKS' => '1',
 	'#DEBUG' => '1',
-	'AIRPORTS' => 'ESSB,EDDP,SKSM,EDDS,EDDM,EDDF,KJAC,KTOL',
+	'AIRPORTS' => $options['airports_list'],
 ];
+
+
+if($options['airport_default']) {
+	// Default Airport Selected
+	$module_config_array['Module'.$cur_mod['svxlinkName']] += [
+		'STARTDEFAULT' => $options['airport_default'],
+	];
+}
 
 ?>
