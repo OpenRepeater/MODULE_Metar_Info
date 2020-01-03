@@ -12,9 +12,47 @@
 
 $default_settings = [
     'timeout_min' => '2',
-	'server' => 'https://aviationweather.gov',
-    'link' => '/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=',
-    'airports_list' => 'ESSB,EDDP,SKSM,EDDS,EDDM,EDDF,KJAC,KTOL',
-    'airport_default' => 'ESSB',
+	'server' => 'TYPE => XML || URL => https://aviationweather.gov || PATH => /adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=',
+
+	'stationsArray' => [
+		'1' => [
+			'icao' => 'ESSB',
+			'label' => 'Stockholm, Sweden',
+		],
+		'2' => [
+			'icao' => 'EDDP',
+			'label' => 'Leipzig, Germany',
+		],
+		'3' => [
+			'icao' => 'SKSM',
+			'label' => 'Santa Marta, Colombia',
+		],
+		'4' => [
+			'icao' => 'EDDS',
+			'label' => 'Stuttgart, Germany',
+		],
+		'5' => [
+			'icao' => 'EDDM',
+			'label' => 'Munich, Germany',
+		],
+		'6' => [
+			'icao' => 'EDDF',
+			'label' => 'Frankfurt/Main, Germany',
+		],
+		'7' => [
+			'icao' => 'KJAC',
+			'label' => 'Jackson, WY , United States',
+		],
+		'8' => [
+			'icao' => 'KTOL',
+			'label' => 'Toledo, OH , United States',
+		],
+		'9' => [
+			'icao' => 'KMRB',
+			'label' => 'Martinsburg, WV',
+		],
+		
+	],
+    
 ];
 ?>
