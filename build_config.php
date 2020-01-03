@@ -7,26 +7,12 @@
 
 $options = unserialize($cur_mod['moduleOptions']);
 
-/*
-	'TYPE' => 'XML',
-	'SERVER' => $options['server'],
-	'LINK' => $options['link'],
-*/
-
-// $server = "TYPE => XML || URL => https://aviationweather.gov || PATH => /adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=";
-
-/*
-$server = "TYPE => TXT || URL => https://tgftp.nws.noaa.gov || PATH => /data/observations/metar/stations/";
-https://tgftp.nws.noaa.gov/data/observations/metar/stations/KMRB.TXT
-*/
-
 // Retrieve and split server parameters string into array.
 $parsing_array = explode('||', $options['server']);
 for($i=0; $i < count($parsing_array ); $i++){
     $key_value_array = explode('=>', $parsing_array[$i]);
     $server_array[trim($key_value_array[0])] = trim($key_value_array[1]);
 }
-
 
 // Build Config
 $module_config_array['Module'.$cur_mod['svxlinkName']] = [
